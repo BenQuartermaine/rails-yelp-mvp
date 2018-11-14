@@ -1,0 +1,19 @@
+
+
+<div class="restaurants-list-header" style="text-align: center;">
+  <h1>Restaurants List</h1>
+  <h3><%= link_to "Add Restaurant +++", new_restaurant_path, class: "btn btn-primary" %></h3>
+</div>
+
+<div class="container-cards" style="width: 0 auto;">
+  <% @restaurants.each_slice(3) do |restaurants| %>
+    <div class="row">
+      <% restaurants.each do |restaurant| %>
+        <div class="col-md-4">
+          <p><%= link_to "#{restaurant.name}", restaurant_path(restaurant) %></p>
+          <p> ==> <%= restaurant.address %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
